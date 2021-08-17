@@ -12,3 +12,5 @@ server.get('/', (req, res) => {
 server.listen(3000, () => {
   console.log('rodando')
 })
+
+console.log(server)
