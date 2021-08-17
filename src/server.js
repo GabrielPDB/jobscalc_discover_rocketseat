@@ -5,6 +5,9 @@ const server = express()
 // Importar as rotas
 const routes = require('./routes')
 
+// Set view engine
+server.set('view engine', 'ejs')
+
 // Habilitar os arquivos estáticos
 server.use(express.static('public'))
 
