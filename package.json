@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/GabrielPDB/jobscalc_discover_rocketseat/issues"
   },
-  "homepage": "https://github.com/GabrielPDB/jobscalc_discover_rocketseat#readme"
+  "homepage": "https://github.com/GabrielPDB/jobscalc_discover_rocketseat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
