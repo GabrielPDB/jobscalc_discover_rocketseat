@@ -2,11 +2,14 @@
 const express = require('express')
 // Executar o express
 const server = express()
+// Importar as rotas
+const routes = require('./routes')
 
-// request, response
-server.get('/', (req, res) => {
-  return res.sendFile(__dirname + '/views/index.html')
-})
+// Habilitar os arquivos estáticos
+server.use(express.static('public'))
+
+// routes
+server.use(routes)
 
 // Roda o servidor na porta 3000
 server.listen(3000, () => {
