@@ -5,7 +5,7 @@ const server = express()
 // Importar as rotas
 const routes = require('./routes')
 
-// Set view engine
+// Set template engine
 server.set('view engine', 'ejs')
 
 // Habilitar os arquivos estáticos

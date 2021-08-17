@@ -1,9 +1,11 @@
 const express = require('express')
 const routes = express.Router()
 
-routes.get('/', (req, res) => res.render('index'))
-routes.get('/job', (req, res) => res.render('job'))
-routes.get('/job/edit', (req, res) => res.render('job-edit'))
-routes.get('/profile', (req, res) => res.render('profile'))
+const views = __dirname + '/views/'
+
+routes.get('/', (req, res) => res.render(views + 'index'))
+routes.get('/job', (req, res) => res.render(views + 'job'))
+routes.get('/job/edit', (req, res) => res.render(views + 'job-edit'))
+routes.get('/profile', (req, res) => res.render(views + 'profile'))
 
 module.exports = routes
