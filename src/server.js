@@ -8,6 +8,9 @@ const routes = require('./routes')
 // Set template engine
 server.set('view engine', 'ejs')
 
+// Habilitar o req.body
+server.use(express.urlencoded({ extended: true }))
+
 // Habilitar os arquivos estáticos
 server.use(express.static('public'))
 
