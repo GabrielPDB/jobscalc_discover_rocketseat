@@ -18,6 +18,6 @@ module.exports = {
         budget: JobUtils.calculateBudget(job, profile['value-hour'])
       }
     })
-    return res.render('index', { jobs: updatedJobs })
+    return res.render('index', { jobs: updatedJobs, profile })
   }
 }
