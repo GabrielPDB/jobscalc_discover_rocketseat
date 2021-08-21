@@ -1,3 +1,7 @@
+const Job = require('../model/Job')
+const Profile = require('../model/Profile')
+const JobUtils = require('../utils/jobUtils')
+
 module.exports = {
   index(req, res) {
     const jobs = Job.get()
