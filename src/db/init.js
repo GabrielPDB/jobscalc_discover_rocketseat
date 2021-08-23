@@ -1,8 +1,10 @@
-const Database = require('config')
+const Database = require('./config')
 
-Database()
+const initDb = {
+  async init() {
+    const db = await Database()
 
-Database.exec(`
+    await db.exec(`
   CREATE TABLE profile (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
@@ -15,7 +17,7 @@ Database.exec(`
   )
 `)
 
-Database.exec(`
+    await db.exec(`
   CREATE TABLE jobs(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
@@ -25,7 +27,7 @@ Database.exec(`
   )
 `)
 
-Database.run(`
+    await db.run(`
   INSERT INTO profile (
     name, 
     avatar, 
@@ -45,7 +47,7 @@ Database.run(`
   );
 `)
 
-Database.run(`
+    await db.run(`
   INSERT INTO jobs (
     name,
     daily_hours,
@@ -59,7 +61,7 @@ Database.run(`
   )
 `)
 
-Database.run(`
+    await db.run(`
   INSERT INTO jobs (
     name,
     daily_hours,
@@ -73,4 +75,8 @@ Database.run(`
   )
 `)
 
-Database.close()
+    await db.close()
+  }
+}
+
+initDb.init()
